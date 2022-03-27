@@ -11,8 +11,6 @@ def read_file(filename):
 			products.append([name, price])
 	return products		
 
-
-
 #Let user input
 def input_newproduct(products):
 	while True:
@@ -23,12 +21,12 @@ def input_newproduct(products):
 		products.append([name, price])
 	return products
 
-#列出購買紀錄
+#List all contents
 def print_products(products):
 	for p in products:
 		print(p)
 
-#write the file
+#Write the file
 def put_in(filename, products):
 	with open(filename, 'w', encoding = 'utf-8') as f:
 		f.write('商品,價格\n')
@@ -47,6 +45,5 @@ def main():
 	products = input_newproduct(products)
 	put_in(filename, products)
 	print_products(products)
-
 
 main()
